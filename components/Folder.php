@@ -270,7 +270,7 @@ class Folder extends Ansible {
         $linkFrom = Project::getReleaseVersionDir($version);
         $cmd[] = sprintf('ln -sfn %s %s', $linkFrom, $currentTmp);
         $cmd[] = sprintf('chown -h %s %s', $user, $currentTmp);
-        $cmd[] = sprintf('mv -fT %s %s', $currentTmp, $this->getConfig()->release_to);
+        $cmd[] = sprintf('mv -f %s %s', $currentTmp, $this->getConfig()->release_to);
 
         return join(' && ', $cmd);
     }
